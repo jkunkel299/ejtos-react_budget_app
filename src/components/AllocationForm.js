@@ -13,7 +13,7 @@ const AllocationForm = (props) => {
 
     const submitEvent = () => {
         if(cost > remaining) {
-            alert("The value cannot exceed remaining funds $"+remaining);
+            alert("The value cannot exceed remaining funds £"+remaining);
             setCost("");
             return;
         }
@@ -45,6 +45,7 @@ const AllocationForm = (props) => {
                     </div>
                     
                     <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
+                        <option defaultValue>Choose...</option>
                         <option value="Marketing" name="marketing">Marketing</option>
                         <option value="Sales" name="sales">Sales</option>
                         <option value="Finanace" name="finance">Finance</option>
@@ -58,8 +59,8 @@ const AllocationForm = (props) => {
                     </div>
 
                     <select className="custom-select" id="inputGroupSelect02"  onChange={(event) => setAction(event.target.value)}>
-                        <option defaultValue value="Add" name="add">Add</option>
-                        <option value="Reduce" name="reduce">Reduce</option>
+                        <option defaultValue value="Add" name="Add">Add</option>
+                        <option value="Reduce" name="Reduce">Reduce</option>
                     </select>
 
                     <input

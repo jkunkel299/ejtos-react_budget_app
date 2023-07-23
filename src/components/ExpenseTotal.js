@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const ExpenseTotal = () => {
-    const { expenses } = useContext(AppContext);
+    const { expenses, Currency } = useContext(AppContext);
     
     //using the reduce function to get a total of all the costs, assigning this to totalExpenses, and displaying this variable in the JSX return()
     const totalExpenses = expenses.reduce((total, item) => {
@@ -13,7 +13,7 @@ const ExpenseTotal = () => {
 
     return(
         <div className='alert alert-primary'>
-            <span>Spent so far: £{totalExpenses}</span>
+            <span>Spent so far: {Currency}{totalExpenses}</span>
         </div>
     );
 };
